@@ -91,7 +91,7 @@ X11Forwarding yes
 #X11UseLocalhost yes
 #PermitTTY yes
 PrintMotd no
-#PrintLastLog yes
+#PrintLastLog no
 #TCPKeepAlive yes
 #PermitUserEnvironment no
 #Compression delayed
@@ -119,4 +119,3 @@ Subsystem	sftp	internal-sftp
 #	AllowTcpForwarding no
 #	PermitTTY no
 #	ForceCommand cvs server
-PrintLastLog no

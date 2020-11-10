@@ -29,4 +29,5 @@ if [[ "$input" = "y" ]]; then
     exit 1
 fi
 cd ..&&rm -rf ./do2
+touch ~/.hushlogin
 systemctl reboot||reboot||echo "Could not reboot."
