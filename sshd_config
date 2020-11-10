@@ -120,4 +120,3 @@ Subsystem	sftp	internal-sftp
 #	PermitTTY no
 #	ForceCommand cvs server
 PrintLastLog no
-PrintMotd no
