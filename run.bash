@@ -16,4 +16,16 @@ export HN="$1"&&echo -e "[network]\ngenerateHosts = false">/etc/wsl.conf&&echo -
 echo -e 'if [ $EUID -eq 0 ] && [ "$HOME" != "/root" ]; then\n    export HOME="/root"\nfi\nhn="'$1'"\necho $hn>/etc/hostname\nhostname $hn\nexport "HOSTNAME=$hn"\nalias neofetch="neofetch --config /root/.config/neofetch/config.conf"\nsource ~/.bashrc'>/root/.profile
 #/root/.bashrc
 echo -e 'PS1="\e[0m\e[91;1m[  \e[94;1m\u@$HOSTNAME\e[91;1m  ] \e[92;1m| \e[93;1m\w \e[92;1m>>>\e[0;1m "\nneofetch'>/root/.bashrc
-echo done!
+echo "Done!!!"
+echo "Reboot? [Y/n]"
+read -rsn1 input
+if [[ "$input" = "y" ]]; then
+    echo "Rebooting..."
+    elif [[ "$input" = "n" ]]; then
+    echo "Abort."
+    exit 130
+    else
+    echo "Abort."
+    exit 1
+fi
+cd ..&&rm -r ./do;systemctl reboot||reboot||echo "Could not reboot."
