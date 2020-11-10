@@ -28,4 +28,5 @@ if [[ "$input" = "y" ]]; then
     echo "Abort."
     exit 1
 fi
-cd ..&&rm -r ./do;systemctl reboot||reboot||echo "Could not reboot."
+cd ..&&rm -rf ./do2
+systemctl reboot||reboot||echo "Could not reboot."
